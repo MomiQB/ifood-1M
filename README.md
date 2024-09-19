@@ -2,11 +2,11 @@
  
 This study compares three methods for food image classification on the [iFood-2019 dataset]([https://www.aicrowd.com/challenges/mapping-challenge](https://www.kaggle.com/c/ifood-2019-fgvc6/overview)): SIFT with Bag-of-Words (BoW), Convolutional Neural Networks (CNNs), and Self-Supervised Learning (SSL).
 
-## The dataset
+### _The dataset:_
 The original iFood-2019 dataset consists of three subsets: training (118,475 samples), validation (11,994 images), and test (28,377 images), each containing images from 251 possible classes.  
 For the purpose of this project, I neglect the test set as the ground truth labels are not publicly available. I will use the original validation set as test set, and split the original training set into training and validation.  
 
-## The task
+### _The task:_
 The task consists in classifying food images into one of the 251 categories. To achieve this, I employ three different methods:  
 -  _Feature Extraction Approach_: This method uses SIFT (Scale-Invariant Feature Transform) to extract key points
 from images. These key points were then quantized into visual words using the Bag of Words (BoW) model. A traditional classifier was then trained over those visual features to perform classification.  
@@ -20,4 +20,9 @@ The **goal** is to design and train a classifier that is able to distinguish amo
 
 The code is developed using **Pytorch**.
 
-### _Content:_
+### _Content:_  
+- [Preprocessing.ipynb](https://github.com/MomiQB/ifood-1M/blob/main/Preprocessing.ipynb): preprocessing the dataset to address the issue of class imbalance
+- [FeatureExtraction.ipynb](https://github.com/MomiQB/ifood-1M/blob/main/FeatureExtraction.ipynb): implementation of SIFT/BoW
+- [CNN.ipynb](https://github.com/MomiQB/ifood-1M/blob/main/CNN.ipynb): implementation of the CNN
+- [SSL.ipynb](https://github.com/MomiQB/ifood-1M/blob/main/SSL.ipynb): implementation of the Self-Supervised Learning approach
+- [CNN50eph.pth](https://github.com/MomiQB/ifood-1M/blob/main/CNN50eph.pth): CNN model trained for 50 epochs
